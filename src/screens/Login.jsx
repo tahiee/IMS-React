@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import React, { useEffect, useRef, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -14,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { loginUser, signUpUser } from "../firebase/firebasemethod.js";
-// import backgroundImage1 from "../../img/bg-01.jpg";
+
 import backgroundVideo1 from "../../img/8bd7760b-30da-4964-b8bf-75089cb53938.mp4";
 
 function Copyright(props) {
