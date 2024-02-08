@@ -17,7 +17,6 @@ import AllCourse from '../Admin-Dashboard/allCourse/AllCourse';
 import {AllStudents} from '../Admin-Dashboard/allStudents/AllStudents';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
-import '../../style.css'
 
 export default function AdminDash() {
   const [state, setState] = React.useState({
