@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import "../style.css";
 import {
   Container,
   Grid,
