@@ -137,7 +137,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                value={"tahir1@gmail.com"}
+                // value={"tahir1@gmail.com"}
               />
               <TextField
                 margin="normal"
@@ -148,7 +148,7 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                value={"tahir123"}
+                // value={"tahir123"}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
