@@ -44,15 +44,15 @@ export default function SignInSide() {
       password: data.get("password"),
     });
 
-    // signUpUser({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    //   type: 'students'
-    // }).then((res) => {
-    //   console.log(res);
-    // }).catch((error) => {
-    //   console.log(error);
-    // })
+    signUpUser({
+      email: data.get('email'),
+      password: data.get('password'),
+      type: 'students'
+    }).then((res) => {
+      console.log(res);
+    }).catch((error) => {
+      console.log(error);
+    })
 
     loginUser({
       email: data.get("email"),
