@@ -69,9 +69,9 @@ export default function AddCourse() {
         marginTop: "12px",
       }}
     >
-      <Card sx={{ minWidth: 355 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 20 }} variant="h5" component="div">
+      <Card sx={{ minWidth: 355 }} className="card" >
+        <CardContent >
+          <Typography sx={{ fontSize: 25 , fontWeight:"500", fontFamily:"Josefin Sans" }} variant="h4" component="div">
             Add Course
           </Typography>
           <Grid item sx={{ marginTop: "12px" }} md={6} mb={4}>
