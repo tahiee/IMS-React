@@ -7,7 +7,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { useState } from "react";
 import { useEffect } from "react";
 import { deleteDocument, getAllData } from "../../../firebase/firebasemethod";
@@ -65,49 +65,65 @@ const AllCourse = () => {
 
   return (
     <>
-      <Container sx={{ display: "flex", justifyContent: "space-around" }}>
-        {getAllCourse.map((AllCourse, index) => (
-          <Card
-            sx={{
-              maxWidth: 675,
-            }}
-          >
-            <CardContent>
-              <Typography sx={{ fontSize: 20 }} variant="h5" component="div">
-                Sir Name:{AllCourse.SirNameValue}
-              </Typography>
-              <Typography sx={{ fontSize: 20 }} variant="h5" component="div">
-                Days:{AllCourse.Days}
-              </Typography>
-              <Typography sx={{ fontSize: 20 }} variant="h5" component="div">
-                Course:{AllCourse.SubjectValue}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button
-                onClick={() => {
-                  handleClick(AllCourse.documentId);
+      <Container sx={{ padding: 2 }}>
+        <Grid container spacing={2} justifyContent="space-evenly">
+          {getAllCourse.map((AllCourse, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+              <Card
+                sx={{
+                  maxWidth: 675,
                 }}
               >
-                Delete
-              </Button>
-              <Snackbar
-                open={open}
-                autoHideDuration={6000}
-                onClose={handleClose}
-              >
-                <Alert
-                  onClose={handleClose}
-                  severity="success"
-                  variant="filled"
-                  sx={{ width: "100%" }}
-                >
-                  Successfully Deleted!
-                </Alert>
-              </Snackbar>
-            </CardActions>
-          </Card>
-        ))}
+                <CardContent>
+                  <Typography
+                    sx={{ fontSize: 20 }}
+                    variant="h5"
+                    component="div"
+                  >
+                    Sir Name:{AllCourse.SirNameValue}
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 20 }}
+                    variant="h5"
+                    component="div"
+                  >
+                    Days:{AllCourse.Days}
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 20 }}
+                    variant="h5"
+                    component="div"
+                  >
+                    Course:{AllCourse.SubjectValue}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    onClick={() => {
+                      handleClick(AllCourse.documentId);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                  <Snackbar
+                    open={open}
+                    autoHideDuration={6000}
+                    onClose={handleClose}
+                  >
+                    <Alert
+                      onClose={handleClose}
+                      severity="success"
+                      variant="filled"
+                      sx={{ width: "100%" }}
+                    >
+                      Successfully Deleted!
+                    </Alert>
+                  </Snackbar>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </>
   );

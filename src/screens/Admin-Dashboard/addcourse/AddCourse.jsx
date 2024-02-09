@@ -31,6 +31,13 @@ export default function AddCourse() {
 
   const addCourseDetails = (e) => {
     e.preventDefault();
+    if (
+      SirNameValue.current.value.trim() === "" &&
+      Days.current.value.trim() === ""
+    ) {
+      alert("Textarea cannot be empty");
+      return;
+    }
     console.log("addcoursedetails clicked");
     const user = auth.currentUser;
     const obj = {
@@ -76,6 +83,8 @@ export default function AddCourse() {
               label="Sir Name"
               variant="outlined"
               size="large"
+              required
+              // helperText="Add The Name"
             />
           </Grid>
           <Grid item sx={{ marginTop: "" }} md={6} mb={4}>
@@ -87,6 +96,7 @@ export default function AddCourse() {
               label="Days"
               variant="outlined"
               size="large"
+              required
             />
           </Grid>
           <Grid container rowSpacing={2}>
@@ -94,6 +104,7 @@ export default function AddCourse() {
               <FormControl fullWidth variant="outlined" size="large">
                 <InputLabel id="subject-label">Course Option</InputLabel>
                 <Select
+                  required
                   inputRef={SubjectValue}
                   labelId="subject-label"
                   id="subject"
