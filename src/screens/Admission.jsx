@@ -54,12 +54,12 @@ const Admission = () => {
       const dataExist = await getSingleData("admissions", user.uid);
       console.log(dataExist);
       if (dataExist.length !== 0) {
-        alert("You Had Already Submint the Form");
+        alert("Please Try Again Later Your From Already Submited");
       } else {
         sendData(obj, "admissions")
           .then((res) => {
             console.log("Data sent to Firebase successfully", res);
-            alert("Data sent to Firebase successfully");
+            alert("Your From Submited successfully");
           })
           .catch((error) => {
             console.error("Error sending data to Firebase:", error);

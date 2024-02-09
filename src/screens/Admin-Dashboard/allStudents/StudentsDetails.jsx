@@ -6,18 +6,23 @@ import CardMedia from "@mui/material/CardMedia";
 // import Button from '@mui/material/Button';
 import Typography from "@mui/material/Typography";
 import { Box, Button, Grid } from "@mui/material";
-import { getAllData } from "../../../firebase/firebasemethod";
+// import { getAllData } from "../../../firebase/firebasemethod";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { getSingleData } from "../../../firebase/firebasemethod";
+import { auth } from "../../../firebase/firebaseConfig";
 
 const StudentsDetails = () => {
+  // const user = auth.currentUser;
+  const {id} = useParams();
   let navigate = useNavigate();
-
   const [studentsData, setStudentsData] = useState([]);
+
   useEffect(() => {
+    console.log(id);
     const fetchStudentsData = async () => {
       try {
-        const data = await getAllData("admissions");
+        const data = await getSingleData("admissions", id);
         setStudentsData(data);
       } catch (error) {
         console.log("Error fetching students data:", error);
@@ -25,6 +30,7 @@ const StudentsDetails = () => {
     };
     fetchStudentsData();
   }, []);
+
   return (
     <>
       <div className="text-center mt-2">StudentsDetails</div>

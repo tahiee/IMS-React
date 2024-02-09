@@ -12,7 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../firebase/firebasemethod.js";
+import { loginUser, signUpUser } from "../firebase/firebasemethod.js";
 import backgroundVideo1 from "../../img/8bd7760b-30da-4964-b8bf-75089cb53938.mp4";
 
 function Copyright(props) {
@@ -84,6 +84,7 @@ export default function SignInSide() {
         {/* Video */}
         <Grid item xs={-12} sm={4} md={7} sx={{ position: "relative" }}>
           <video
+          className="loginVideo"
             autoPlay
             loop
             muted

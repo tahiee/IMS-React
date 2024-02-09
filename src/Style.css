@@ -68,7 +68,6 @@
   --card-width: calc(var(--card-height) / 1.5);
 }
 
-
 body {
   /* min-height: 100vh; */
   background: #212534;
@@ -78,9 +77,8 @@ body {
   /* padding-top: 2rem; */
   /* padding-bottom: 2rem; */
   box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
-
 
 .card {
   background: #191c29;
@@ -103,11 +101,11 @@ body {
   color: rgb(88 199 250 / 100%);
   transition: color 1s;
 }
-.card:hover:before, .card:hover:after {
+.card:hover:before,
+.card:hover:after {
   animation: none;
   opacity: 0;
 }
-
 
 .card::before {
   content: "";
@@ -115,13 +113,16 @@ body {
   height: 102%;
   border-radius: 8px;
   background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
 }
 
 .card::after {
@@ -137,10 +138,13 @@ body {
   transform: scale(0.8);
   filter: blur(calc(var(--card-height) / 6));
   background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
-    opacity: 1;
-  transition: opacity .5s;
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
   animation: spin 2.5s linear infinite;
 }
 
@@ -159,4 +163,9 @@ a {
   font-family: sans-serif;
   font-weight: bold;
   margin-top: 2rem;
+}
+@media screen and (max-width: 400px) {
+  .loginVideo{
+    display: none;
+  }
 }

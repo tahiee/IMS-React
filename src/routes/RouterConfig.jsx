@@ -26,7 +26,7 @@ const RouterConfig = () => {
           path="/admission"
           element={<ProtectedRoutes component={<Admission />} />}
         />
-        <Route path="/studentDetails" element={<StudentsDetails />} />
+        <Route path="/studentDetails/:id" element={<StudentsDetails />} />
       </Routes>
     </BrowserRouter>
   );
