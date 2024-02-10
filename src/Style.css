@@ -1,17 +1,13 @@
 .gradient-custom {
   background: #f093fb;
 
-  background: -webkit-linear-gradient(
+  /* background: -webkit-linear-gradient(
     to bottom right,
     rgba(240, 147, 251, 1),
     rgba(245, 87, 108, 1)
-  );
+  ); */
 
-  background: linear-gradient(
-    to bottom right,
-    rgba(240, 147, 251, 1),
-    rgba(245, 87, 108, 1)
-  );
+  background: linear-gradient(45deg, #7c9885, #b5b682);
 
   padding: 0.5rem;
 }
@@ -30,30 +26,17 @@
 .css-1oqqzyl-MuiContainer-root {
   max-width: 1526px !important;
 }
-.admin {
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2600 1440'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='862.49' y1='-420.67' x2='1546.24' y2='981.21' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='.1' stop-color='%2352125A'/%3E%3Cstop offset='.27' stop-color='%23511452'/%3E%3Cstop offset='.63' stop-color='%23B02BA6'/%3E%3Cstop offset='.88' stop-color='%23CB33BD'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 0v952.71l497.08 428.77c44.64 38.51 122.25 50 172.46 25.57L2600 467.26V0z' fill='url(%23a)'/%3E%3Cpath d='M624.43 1418.11c-44.33 4.25-94.67-9.44-127.35-37.63L0 952.48v50.82l452.08 389.18c44.61 38.52 122.13 50 172.35 25.63z' fill='%23cb33bd' opacity='.3'/%3E%3C/svg%3E")
-    center/cover;
-  /* Other CSS properties for your element */
-  background-repeat: no-repeat;
-  background-position-y: 0;
-  background-color: initial;
-  height: 1120px;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  position: relative;
-  background-size: cover;
-}
+
 .css-1c9go8c {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(../img//admin.gif);
+  /* background-color: #49dfb0; */
+  background-image: linear-gradient(45deg, #7c9885, #b5b682);;
+  /* background-image: url(../img//admin.gif); */
   position: relative;
-  /* background: linear-gradient(87deg, rgb(17, 205, 239), rgb(17, 113, 239)); */
-  /* padding-bottom: 14rem; */
   padding-top: 1rem;
-  height: 670px;
+  height: 100vh;
 }
 
 /* Card Style */
@@ -70,7 +53,7 @@
 
 body {
   /* min-height: 100vh; */
-  background: #212534;
+  /* background: #212534; */
   /* display: flex; */
   align-items: center;
   flex-direction: column;
@@ -169,3 +152,23 @@ a {
     display: none;
   }
 }
+.css-n6v7qi-MuiPaper-root-MuiDrawer-paper{
+  background-color: transparent !important;
+}
+.css-er0qb-MuiGrid-root{
+  color: white;
+  background-color: rgb(33, 42, 69) !important;
+}
+.css-bhp9pd-MuiPaper-root-MuiCard-root{
+  margin: 20px ;
+  background-color: rgb(33, 42, 69) !important;
+  color: white !important;
+}
+.css-hip9hq-MuiPaper-root-MuiAppBar-root{
+  background-color: rgb(33, 42, 69) !important;
+}
+
+/* All Course Style */
+
+
+/* End All Course Style */

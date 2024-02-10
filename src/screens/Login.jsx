@@ -45,14 +45,16 @@ export default function SignInSide() {
     });
 
     signUpUser({
-      email: data.get('email'),
-      password: data.get('password'),
-      type: 'students'
-    }).then((res) => {
-      console.log(res);
-    }).catch((error) => {
-      console.log(error);
+      email: data.get("email"),
+      password: data.get("password"),
+      type: "students",
     })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     loginUser({
       email: data.get("email"),
@@ -81,10 +83,10 @@ export default function SignInSide() {
         sx={{ width: "100%", height: "91vh", position: "relative" }}
       >
         <CssBaseline />
-        {/* Video */}
-        <Grid item xs={-12} sm={4} md={7} sx={{ position: "relative" }}>
+
+        <Grid item xs={12} sm={4} md={7} sx={{ position: "relative" }}>
           <video
-          className="loginVideo"
+            className="loginVideo"
             autoPlay
             loop
             muted
@@ -103,11 +105,10 @@ export default function SignInSide() {
           sx={{
             zIndex: 1,
             position: "relative",
-            backgroundColor: "rgba(255, 255, 255, 0.7)", // Adjust opacity as needed
-            padding: 4, // Adjust padding as needed
+            backgroundColor: "rgba(255, 255, 255, 0.7)",
+            padding: 4,
           }}
         >
-
           <Box
             sx={{
               my: 8,
@@ -138,7 +139,18 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                // value={"tahir1@gmail.com"}
+                InputProps={{
+                  style: { color: "white" }, // Change text color to white
+                  sx: {
+                    "& fieldset": {
+                      borderColor: "white !important", // Change border color to white
+                    },
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "white" }, // Change label text color to white
+                }}
+                // value={"tahir@gmail.com"}
               />
               <TextField
                 margin="normal"
@@ -150,13 +162,23 @@ export default function SignInSide() {
                 id="password"
                 autoComplete="current-password"
                 // value={"tahir123"}
+                InputProps={{
+                  style: { color: "white" }, // Change text color to white
+                  sx: {
+                    "& fieldset": {
+                      borderColor: "white !important", // Change border color to white
+                    },
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "white" }, // Change label text color to white
+                }}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
               <Button
-                // onClick={GotoLogin}
                 type="submit"
                 fullWidth
                 variant="contained"

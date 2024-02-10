@@ -15,6 +15,8 @@ import {
   FormControlLabel,
   Radio,
   Box,
+  createTheme,
+  ThemeProvider,
 } from "@mui/material";
 import { sendData } from "../firebase/firebasemethod";
 import { auth } from "../firebase/firebaseConfig";
@@ -71,6 +73,27 @@ const Admission = () => {
       console.log(error);
     }
   };
+  const theme = createTheme({
+    components: {
+      MuiTextField: {
+        defaultProps: {
+          variant: "outlined",
+          InputLabelProps: {
+            style: {
+              color: "white",
+              borderColor: "white !important",
+            },
+          },
+          InputProps: {
+            style: {
+              color: "white",
+              borderColor: "white !important",
+            },
+          },
+        },
+      },
+    },
+  });
 
   return (
     <>
@@ -93,39 +116,44 @@ const Admission = () => {
                 <form>
                   <Grid container rowSpacing={4}>
                     <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        id="firstName"
-                        label="First Name"
-                        inputRef={firstValue}
-                        variant="outlined"
-                        size="large"
-                        required
-                      />
+                      <ThemeProvider theme={theme}>
+                        <TextField
+                          fullWidth
+                          id="firstName"
+                          label="First Name"
+                          inputRef={firstValue}
+                          size="large"
+                          required
+                        />
+                      </ThemeProvider>
                     </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        id="lastName"
-                        label="Last Name"
-                        inputRef={lastValue}
-                        variant="outlined"
-                        size="large"
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        type="number"
-                        fullWidth
-                        id="lastName"
-                        label="CNIC Number"
-                        inputRef={cnicValue}
-                        variant="outlined"
-                        size="large"
-                        required
-                      />
-                    </Grid>
+                    <ThemeProvider theme={theme}>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          id="lastName"
+                          label="Last Name"
+                          inputRef={lastValue}
+                          variant="outlined"
+                          size="large"
+                          required
+                        />
+                      </Grid>
+                    </ThemeProvider>
+                    <ThemeProvider theme={theme}>
+                      <Grid item xs={12}>
+                        <TextField
+                          type="number"
+                          fullWidth
+                          id="lastName"
+                          label="CNIC Number"
+                          inputRef={cnicValue}
+                          variant="outlined"
+                          size="large"
+                          required
+                        />
+                      </Grid>
+                    </ThemeProvider>
                     <Grid item xs={12}>
                       {/* <FormControl fullWidth variant="outlined" size="large">
                         <InputLabel id="subject-label">Campus</InputLabel>
@@ -145,101 +173,111 @@ const Admission = () => {
                       </FormControl> */}
                     </Grid>
                   </Grid>
-
-                  <Grid container rowSpacing={2}>
-                    <Grid item xs={12}>
-                      <TextField
-                        type="date"
-                        fullWidth
-                        id="birthdayDate"
-                        inputRef={birthValue}
-                        variant="outlined"
-                        size="large"
-                        required
-                      />
-                    </Grid>
-                    <Grid item md={6} mb={4}>
-                      <Typography variant="h6" className="mb-2 pb-1">
-                        Gender:{" "}
-                      </Typography>
-                      <RadioGroup row name="gender" defaultValue="male">
-                        <FormControlLabel
-                          value="female"
-                          control={<Radio />}
-                          label="Female"
-                        />
-                        <FormControlLabel
-                          value="male"
-                          control={<Radio />}
-                          label="Male"
-                        />
-                        <FormControlLabel
-                          value="other"
-                          control={<Radio />}
-                          label="Other"
-                        />
-                      </RadioGroup>
-                    </Grid>
-                  </Grid>
-
-                  <Grid container rowSpacing={2}>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        type="email"
-                        id="emailAddress"
-                        label="Your Email Address"
-                        inputRef={emailValue}
-                        variant="outlined"
-                        size="large"
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        type="number"
-                        id="phoneNumber"
-                        label="Phone Number"
-                        inputRef={phoneValue}
-                        variant="outlined"
-                        size="large"
-                        required
-                      />
-                    </Grid>
-                  </Grid>
-
-                  <Grid container rowSpacing={2}>
-                    <Grid item xs={12} sx={{ marginTop: "30px" }}>
-                      <FormControl fullWidth variant="outlined" size="large">
-                        <InputLabel id="subject-label">
-                          Course Option
-                        </InputLabel>
-                        <Select
-                          labelId="subject-label"
-                          id="subject"
-                          defaultValue={"Web & App Development"}
-                          label="Course Option"
-                          inputRef={courseValue}
+                  <ThemeProvider theme={theme}>
+                    <Grid container rowSpacing={2}>
+                      <Grid item xs={12}>
+                        <TextField
+                          type="date"
+                          fullWidth
+                          id="birthdayDate"
+                          inputRef={birthValue}
+                          variant="outlined"
+                          size="large"
                           required
-                        >
-                          <MenuItem value="" disabled>
-                            Course want to Inrolled
-                          </MenuItem>
-                          <MenuItem value={"Web & App Development"}>
-                            Web & App Development
-                          </MenuItem>
-                          <MenuItem value={"ChatBoat"}>ChatBoat</MenuItem>
-                          <MenuItem value={"Flutter"}>Flutter</MenuItem>
-                          <MenuItem value={"Graphic Desgine"}>
-                            Graphic Desgine
-                          </MenuItem>
-                        </Select>
-                      </FormControl>
+                        />
+                      </Grid>
+                      <Grid item md={6} mb={4}>
+                        <Typography variant="h6" className="mb-2 pb-1">
+                          Gender:{" "}
+                        </Typography>
+                        <RadioGroup row name="gender" defaultValue="male">
+                          <FormControlLabel
+                            value="female"
+                            control={<Radio />}
+                            label="Female"
+                          />
+                          <FormControlLabel
+                            value="male"
+                            control={<Radio />}
+                            label="Male"
+                          />
+                          <FormControlLabel
+                            value="other"
+                            control={<Radio />}
+                            label="Other"
+                          />
+                        </RadioGroup>
+                      </Grid>
                     </Grid>
-                  </Grid>
+                  </ThemeProvider>
+                  <ThemeProvider theme={theme}>
+                    <Grid container rowSpacing={2}>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          type="email"
+                          id="emailAddress"
+                          label="Your Email Address"
+                          inputRef={emailValue}
+                          variant="outlined"
+                          size="large"
+                          required
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          type="number"
+                          id="phoneNumber"
+                          label="Phone Number"
+                          inputRef={phoneValue}
+                          variant="outlined"
+                          size="large"
+                          required
+                        />
+                      </Grid>
+                    </Grid>
+                  </ThemeProvider>
+                  <ThemeProvider theme={theme}>
+                    <Grid container rowSpacing={2}>
+                      <Grid item xs={12} sx={{ marginTop: "30px" }}>
+                        <FormControl fullWidth variant="outlined" size="large">
+                          <InputLabel id="subject-label">
+                            Course Option
+                          </InputLabel>
+                          <Select
+                            sx={{ color: "white" }}
+                            labelId="subject-label"
+                            id="subject"
+                            defaultValue={"Web & App Development"}
+                            label="Course Option"
+                            inputRef={courseValue}
+                            required
+                          >
+                            <MenuItem value="" disabled>
+                              Course want to Inrolled
+                            </MenuItem>
+                            <MenuItem value={"Web & App Development"}>
+                              Web & App Development
+                            </MenuItem>
+                            <MenuItem value={"ChatBoat"}>ChatBoat</MenuItem>
+                            <MenuItem value={"Flutter"}>Flutter</MenuItem>
+                            <MenuItem value={"Graphic Desgine"}>
+                              Graphic Desgine
+                            </MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Grid>
+                    </Grid>
+                  </ThemeProvider>
 
-                  <Box sx={{display:"flex",justifyContent:'space-between',marginTop:"20px"}}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      marginTop: "20px",
+                    }}
+                  >
                     <Box className="">
                       <Button
                         variant="contained"

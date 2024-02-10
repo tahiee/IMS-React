@@ -41,7 +41,21 @@ export const AllStudents = () => {
             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
               <Card
                 key={index}
-                sx={{ maxWidth: 315, marginLeft: "12px", marginTop: "10px" }}
+                sx={{
+                  borderRadius: 4,
+                  maxWidth: 315,
+                  marginLeft: "12px",
+                  marginTop: "10px",
+                  boxShadow:
+                    "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
+                  transition: "all 300ms",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow:
+                      "0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",
+                  },
+                  
+                }}
               >
                 <CardMedia
                   sx={{ height: 120 }}
