@@ -19,7 +19,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { sendData } from "../firebase/firebasemethod";
-import { auth } from "../firebase/firebaseConfig";
+import { auth, storage } from "../firebase/firebaseConfig";
 import { getSingleData } from "../firebase/firebasemethod";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,6 @@ const Admission = () => {
   const firstValue = useRef();
   const lastValue = useRef();
   const cnicValue = useRef();
-  // const campusValue = useRef();
   const birthValue = useRef();
   const emailValue = useRef();
   const phoneValue = useRef();
@@ -95,6 +94,10 @@ const Admission = () => {
     },
   });
 
+  const profileimg = () => {
+    console.log("uplaod button works");
+    storage
+  };
   return (
     <>
       <Container className="vh-102 gradient-custom">
@@ -115,6 +118,20 @@ const Admission = () => {
                 </Typography>
                 <form>
                   <Grid container rowSpacing={4}>
+                    <Grid item xs={12}>
+                      <ThemeProvider theme={theme}>
+                        <input type="file" label="Chosse your Profile" />
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          size="large"
+                          type="submit"
+                          onClick={profileimg}
+                        >
+                          Upload first
+                        </Button>
+                      </ThemeProvider>
+                    </Grid>
                     <Grid item xs={12}>
                       <ThemeProvider theme={theme}>
                         <TextField
