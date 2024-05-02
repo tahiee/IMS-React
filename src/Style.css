@@ -149,18 +149,18 @@ a {
 }
 @media screen and (max-width: 400px) {
   .loginVideo {
-    display: none;
+    display: none !important;
   }
 }
 .css-n6v7qi-MuiPaper-root-MuiDrawer-paper {
   background-color: transparent !important;
 }
 .css-er0qb-MuiGrid-root {
-  color: white;
+  color: white !important;
   background-color: rgb(33, 42, 69) !important;
 }
 .css-bhp9pd-MuiPaper-root-MuiCard-root {
-  margin: 20px;
+  margin: 20px !important;
   background-color: rgb(33, 42, 69) !important;
   color: white !important;
 }
