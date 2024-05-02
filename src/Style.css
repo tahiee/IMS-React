@@ -32,7 +32,7 @@
   background-position: center;
   background-size: cover;
   /* background-color: #49dfb0; */
-  background-image: linear-gradient(45deg, #7c9885, #b5b682);;
+  background-image: linear-gradient(45deg, #7c9885, #b5b682);
   /* background-image: url(../img//admin.gif); */
   position: relative;
   padding-top: 1rem;
@@ -100,12 +100,12 @@ body {
     #5ddcff,
     #3c67e3 43%,
     #4e00c2
-  );
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
+  ) !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: -1% !important;
+  left: -2% !important;
+  animation: spin 2.5s linear infinite !important;
 }
 
 .card::after {
@@ -125,7 +125,7 @@ body {
     #5ddcff,
     #3c67e3 43%,
     #4e00c2
-  );
+  ) !important;
   opacity: 1;
   transition: opacity 0.5s;
   animation: spin 2.5s linear infinite;
@@ -148,27 +148,26 @@ a {
   margin-top: 2rem;
 }
 @media screen and (max-width: 400px) {
-  .loginVideo{
+  .loginVideo {
     display: none;
   }
 }
-.css-n6v7qi-MuiPaper-root-MuiDrawer-paper{
+.css-n6v7qi-MuiPaper-root-MuiDrawer-paper {
   background-color: transparent !important;
 }
-.css-er0qb-MuiGrid-root{
+.css-er0qb-MuiGrid-root {
   color: white;
   background-color: rgb(33, 42, 69) !important;
 }
-.css-bhp9pd-MuiPaper-root-MuiCard-root{
-  margin: 20px ;
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  margin: 20px;
   background-color: rgb(33, 42, 69) !important;
   color: white !important;
 }
-.css-hip9hq-MuiPaper-root-MuiAppBar-root{
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
   background-color: rgb(33, 42, 69) !important;
 }
 
 /* All Course Style */
-
 
 /* End All Course Style */
